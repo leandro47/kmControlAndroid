@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fundoApp"
+        android:elevation="5sp"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/imageViewfundoLogoAzul"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@color/corTemaAzul" />
+
+        <ImageView
+            android:id="@+id/imageViewLogoBranca"
+            android:layout_width="224dp"
+            android:layout_height="74dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bandag" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="224dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center_horizontal"
+            android:text="KM Control"
+            android:textColor="@android:color/white"
+            android:textSize="42sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewfundoLogoAzul"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewLogoBranca" />
+
+        <ImageView
+            android:id="@+id/imageViewQuadroConcorrente"
+            android:layout_width="0dp"
+            android:layout_height="332dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewfundoLogoAzul" />
+
+        <ImageView
+            android:id="@+id/imageViewQuadroBandag"
+            android:layout_width="0dp"
+            android:layout_height="332dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewQuadroConcorrente" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:elevation="3dp"
+            android:fontFamily="@font/cairo_light"
+            android:gravity="center_horizontal"
+            android:text="Empresa Concorrente"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintTop_toTopOf="@+id/imageViewQuadroConcorrente" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:elevation="3dp"
+            android:fontFamily="@font/cairo_light"
+            android:gravity="center_horizontal"
+            android:text="Vamos Comparar?"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toTopOf="@+id/imageViewVamosComparar" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="3dp"
+            android:fontFamily="@font/cairo_light"
+            android:gravity="center_horizontal"
+            android:text="Custo por Pneu"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarMeses" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:elevation="3dp"
+            android:fontFamily="@font/cairo_light"
+            android:gravity="center_horizontal"
+            android:text="Custo Total"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarQuantidadeVeiculos" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/corTemaAzul"
+            android:elevation="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/corTemaAzul"
+            android:elevation="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewbandagAzul" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/corTemaAzul"
+            android:elevation="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintTop_toBottomOf="@+id/ValorPneuRecapadoConcorrente" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/corTemaAzul"
+            android:elevation="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintTop_toBottomOf="@+id/ValorPneuRecapadoBandag" />
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/corTemaAzul"
+            android:elevation="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ValorPneuNovoConcorrente"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/fundoTextBox"
+            android:hint="Preço pneu novo"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ValorPneuNovoBandag"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/fundoTextBox"
+            android:hint="Preço pneu novo"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintStart_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/KmRodadoMes"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/fundoTextBox"
+            android:elevation="1dp"
+            android:hint="Quantos KM você roda no mês?"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toEndOf="@+id/textView18"
+            app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ValorPneuRecapadoBandag"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/fundoTextBox"
+            android:hint="Preço primeira recapagem"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/ValorPneuNovoBandag" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/KmPneuNovoBandag"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/fundoTextBox"
+            android:hint="KM pneu novo"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/KmPneuRecapadoBandag"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/fundoTextBox"
+            android:hint="KM primeira recapagem"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintStart_toEndOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/KmPneuNovoBandag" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/KmPneuNovoConcorrente"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/fundoTextBox"
+            android:hint="KM pneu novo"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/KmPrimeiraRecapagemConcorrente"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/fundoTextBox"
+            android:hint="KM primeira recapagem"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/KmPneuNovoConcorrente" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ValorPneuRecapadoConcorrente"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/fundoTextBox"
+            android:hint="Preço primeira recapagem"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/ValorPneuNovoConcorrente" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/corTemaAzul"
+            android:gravity="center"
+            android:text="R$"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/corTemaAzul"
+            android:gravity="center"
+            android:text="R$"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/corTemaAzul"
+            android:gravity="center"
+            android:text="R$"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/corTemaAzul"
+            android:gravity="center"
+            android:text="KM"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/corTemaAzul"
+            android:gravity="center"
+            android:text="KM"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/corTemaAzul"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:text="KM"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+        <TextView
+            android:id="@+id/textViewQuantidadePneusDisplay"
+            android:layout_width="97dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/corTemaAzul"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toEndOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+        <TextView
+            android:id="@+id/textViewQuantidadeVeiculosDisplay"
+            android:layout_width="97dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/corTemaAzul"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarQuantidadePneus" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/corTemaAzul"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:paddingLeft="8sp"
+            android:paddingRight="8sp"
+            android:text="Quantidade de Pneus por veiculo"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewQuantidadeVeiculosDisplay"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+        <TextView
+            android:id="@+id/textViewQuantidadeVeiculos"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/corTemaAzul"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:paddingLeft="8sp"
+            android:paddingRight="8sp"
+            android:text="Quantidade de Veiculos na frota"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewQuantidadeVeiculosDisplay"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarQuantidadePneus" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/corTemaAzul"
+            android:gravity="center"
+            android:text="KM"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/corTemaAzul"
+            android:gravity="center"
+            android:text="KM"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/corTemaAzul"
+            android:gravity="center"
+            android:text="R$"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintTop_toBottomOf="@+id/ValorPneuNovoConcorrente" />
+
+        <TextView
+            android:id="@+id/custoCpkConcorrente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custo CPK"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintStart_toStartOf="@+id/KmPrimeiraRecapagemConcorrente"
+            app:layout_constraintTop_toBottomOf="@+id/KmPrimeiraRecapagemConcorrente" />
+
+        <TextView
+            android:id="@+id/custoCpkBandag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custo CPK"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintStart_toStartOf="@+id/KmPneuRecapadoBandag"
+            app:layout_constraintTop_toBottomOf="@+id/KmPneuRecapadoBandag" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="127dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/corTemaAzul"
+            android:onClick="calculaCpkConcorrente"
+            android:text="Calcular CPK"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroConcorrente"
+            app:layout_constraintTop_toBottomOf="@+id/KmPrimeiraRecapagemConcorrente" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="127dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/corTemaAzul"
+            android:onClick="calculaCpkBandag"
+            android:text="Calcular CPK"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintTop_toBottomOf="@+id/KmPneuRecapadoBandag" />
+
+        <ImageView
+            android:id="@+id/imageViewbandagAzul"
+            android:layout_width="0dp"
+            android:layout_height="55sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintHorizontal_bias="0.681"
+            app:layout_constraintStart_toStartOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintTop_toTopOf="@+id/imageViewQuadroBandag"
+            app:srcCompat="@drawable/bandag1" />
+
+        <TextView
+            android:id="@+id/textViewQuantidadeMeses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:elevation="1dp"
+            android:text="1 mes(es)"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+        <ImageView
+            android:id="@+id/imageViewVamosComparar"
+            android:layout_width="397dp"
+            android:layout_height="1055dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewQuadroBandag"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Por quantos meses?"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/KmRodadoMes" />
+
+        <SeekBar
+            android:id="@+id/seekBarMeses"
+            android:layout_width="0dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:max="12"
+            android:progress="1"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/textViewQuantidadeMeses" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/textView22"
+            app:srcCompat="@color/fundoApp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            app:srcCompat="@color/fundoApp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:srcCompat="@color/fundoApp" />
+
+        <ImageView
+            android:id="@+id/imageViewResultadoFinal"
+            android:layout_width="381dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:srcCompat="@color/colorbackgroundsucess" />
+
+        <ImageView
+            android:id="@+id/imageViewAssinatura"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewVamosComparar"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:srcCompat="@color/corTemaAzul" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/imageView14"
+            app:srcCompat="@color/fundoApp" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Custo na Concorrência"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView14"
+            app:layout_constraintStart_toStartOf="@+id/imageView14"
+            app:layout_constraintTop_toTopOf="@+id/imageView14" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Custo na Bandag"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Custo na Bandag"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView15"
+            app:layout_constraintStart_toStartOf="@+id/imageView15"
+            app:layout_constraintTop_toTopOf="@+id/imageView15" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Custo na Concorrência"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/textViewCustoConcorrencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="R$ 0,00"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+            app:layout_constraintEnd_toEndOf="@+id/imageView14"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/imageView14" />
+
+        <TextView
+            android:id="@+id/textViewCustoBandag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="R$ 0,00"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+            app:layout_constraintEnd_toEndOf="@+id/imageView15"
+            app:layout_constraintStart_toStartOf="@+id/imageView15" />
+
+        <TextView
+            android:id="@+id/textViewCustoTotalConcorrencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="R$ 0,00"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/textViewCustoTotalBandag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="R$ 0,00"
+            android:textColor="@color/corTemaAzul"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2" />
+
+        <SeekBar
+            android:id="@+id/seekBarQuantidadePneus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:max="8"
+            android:progress="1"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <SeekBar
+            android:id="@+id/seekBarQuantidadeVeiculos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:max="80"
+            android:progress="1"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewVamosComparar"
+            app:layout_constraintStart_toStartOf="@+id/imageViewVamosComparar"
+            app:layout_constraintTop_toBottomOf="@+id/textViewQuantidadeVeiculos" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Powered by Leandro Silva"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewAssinatura"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewAssinatura"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="@+id/imageViewAssinatura"
+            app:layout_constraintTop_toTopOf="@+id/imageViewAssinatura" />
+
+        <TextView
+            android:id="@+id/textViewResultadoFinal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Valor Economizado!"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewResultadoFinal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewResultadoFinal"
+            app:layout_constraintStart_toStartOf="@+id/imageViewResultadoFinal"
+            app:layout_constraintTop_toTopOf="@+id/imageViewResultadoFinal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

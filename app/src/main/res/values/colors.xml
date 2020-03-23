@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#002D57</color>
+    <color name="colorAccent">#003666</color>
+    <color name="corTemaAzul">#003666</color>
+    <color name="fundoApp">#ACD2F4</color>
+    <color name="fundoTextBox">#E8EFF4</color>
+    <color name="colorbackgroundsucess">#BBF4C8</color>
+</resources>
