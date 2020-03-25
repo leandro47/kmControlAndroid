@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.method.KeyListener;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Locale;
 import java.text.NumberFormat;
+
 
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -63,8 +68,10 @@ public class MainActivity extends AppCompatActivity {
     //configura formatacao em dinheiro
     NumberFormat dinheiro = NumberFormat.getCurrencyInstance(localeBR);
 
+    NumberFormat kmcomPonto = NumberFormat.getIntegerInstance();
     DecimalFormat Cpk = new DecimalFormat("0.0000");
     DecimalFormat KmReal = new DecimalFormat("0.0");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,6 +110,10 @@ public class MainActivity extends AppCompatActivity {
         textViewQuantidadePneusDisplay = findViewById(R.id.textViewQuantidadePneusDisplay);
         textViewQuantidadeVeiculosDisplay = findViewById(R.id.textViewQuantidadeVeiculosDisplay);
 
+
+        //configura mascaras de valores
+
+
         //configura seekBar Meses
         seekBarMeses.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -113,7 +124,10 @@ public class MainActivity extends AppCompatActivity {
                 textViewQuantidadeMeses.setText(progress + " mes(es)");
 
                 if(validaCamposComparacao){
+                    kmrodado = kmrodado.replace(".","");
                     double totalRodado = Double.parseDouble(kmrodado);
+                    String totalrodadoformatado = kmcomPonto.format(totalRodado);
+                    KmRodadoMes.setText(totalrodadoformatado.replace(",","."));
                     int pneusPorVeiculos = seekBarQuantidadePneus.getProgress();
                     int totalVeiculos = seekBarQuantidadeVeiculos.getProgress();
                     int totalPneus = pneusPorVeiculos * totalVeiculos;
@@ -184,7 +198,12 @@ public class MainActivity extends AppCompatActivity {
                 Boolean validaCamposComparacao =  validaCamposComparacao(kmrodado);
 
                 if(validaCamposComparacao){
+                    kmrodado = kmrodado.replace(".","");
                     double totalRodado = Double.parseDouble(kmrodado);
+                    String totalrodadoformatado = kmcomPonto.format(totalRodado);
+                    KmRodadoMes.setText(totalrodadoformatado.replace(",","."));
+
+
                     int quantidadeMeses = seekBarMeses.getProgress();
                     int totalVeiculos = seekBarQuantidadeVeiculos.getProgress();
                     int totalPneus = totalVeiculos * progress;
@@ -247,7 +266,11 @@ public class MainActivity extends AppCompatActivity {
                 Boolean validaCamposComparacao =  validaCamposComparacao(kmrodado);
 
                 if(validaCamposComparacao){
+                    kmrodado = kmrodado.replace(".","");
                     double totalRodado = Double.parseDouble(kmrodado);
+                    String totalrodadoformatado = kmcomPonto.format(totalRodado);
+                    KmRodadoMes.setText(totalrodadoformatado.replace(",","."));
+
                     int quantidadeMeses = seekBarMeses.getProgress();
                     int totalPneus =  seekBarQuantidadePneus.getProgress() * progress;
 
@@ -311,17 +334,45 @@ public class MainActivity extends AppCompatActivity {
         Boolean validaCamposConcorrente =  validaCamposConcorrete(p1,p2,k1,k2);
 
         if(validaCamposConcorrente){
-            double precoPneuNovoConcorrete = Double.parseDouble(ValorPneuNovoConcorrente.getText().toString());
-            double precoPneuRecapadoConcorrete = Double.parseDouble(ValorPneuRecapadoConcorrente.getText().toString());
-            double kmPneuNovoConcorrete = Double.parseDouble(KmPneuNovoConcorrente.getText().toString());
-            double kmPneuRecapadoConcorrete = Double.parseDouble(KmPrimeiraRecapagemConcorrente.getText().toString());
+            //campo pneu novo concorrente
+            p1 = p1.replace("R$ ","");
+            p1 = p1.replace("R$", "");
+            p1 = p1.replace("R", "");
+            p1 = p1.replace(".","");
+            p1 = p1.replace(",",".");
+            double precoPneuNovoConcorrete = 0;
+            precoPneuNovoConcorrete = Double.parseDouble(p1);
+            ValorPneuNovoConcorrente.setText(dinheiro.format(precoPneuNovoConcorrete));
 
+            //campo pneu novo concorrente
+            p2 = p2.replace("R$ ","");
+            p2 = p2.replace("R$", "");
+            p2 = p2.replace("R", "");
+            p2 = p2.replace(".","");
+            p2 = p2.replace(",",".");
+            double precoPneuRecapadoConcorrete = 0;
+            precoPneuRecapadoConcorrete = Double.parseDouble(p2);
+            ValorPneuRecapadoConcorrente.setText(dinheiro.format(precoPneuRecapadoConcorrete));
+
+            //campo km novo concorrente
+            k1 = k1.replace(".","");
+            double kmPneuNovoConcorrete = Double.parseDouble(k1);
+            String k1formatado = kmcomPonto.format(kmPneuNovoConcorrete);
+            KmPneuNovoConcorrente.setText(k1formatado.replace(",","."));
+
+            //campo km recapado concorrente
+            k2 = k2.replace(".","");
+            double kmPneuRecapadoConcorrete = Double.parseDouble(k2);
+            String k2formatado = kmcomPonto.format((kmPneuRecapadoConcorrete));
+            KmPrimeiraRecapagemConcorrente.setText(k2formatado.replace(",","."));
+
+            //realiza os calculos
             double kmTotalConcorrente = kmPneuNovoConcorrete + kmPneuRecapadoConcorrete;
             double precoTotalConcorrente = precoPneuNovoConcorrete + precoPneuRecapadoConcorrete;
             double cpkConcorrente = precoTotalConcorrente / kmTotalConcorrente  ;
             cpkConcorrenteComparar = cpkConcorrente;
-
             custoCpkConcorrente.setText("CPK : "+ Cpk.format(cpkConcorrente));
+
             //calcula km para custar 1 real
             double kmPorUmReal = 1.00 / cpkConcorrente;
 
@@ -357,12 +408,37 @@ public class MainActivity extends AppCompatActivity {
         Boolean validaCamposConcorrente =  validaCamposConcorrete(p1,p2,k1,k2);
 
         if(validaCamposConcorrente){
-            double precoPneuNovoBandag = Double.parseDouble(ValorPneuNovoBandag.getText().toString());
-            double precoPneuRecapadoBandag = Double.parseDouble(ValorPneuRecapadoBandag.getText().toString());
-            double kmPneuNovoBandag = Double.parseDouble(KmPneuNovoBandag.getText().toString());
-            double kmPneuRecapadoBandag = Double.parseDouble(KmPneuRecapadoBandag.getText().toString());
+            //campo pneu novo bandag
+            p1 = p1.replace("R$ ","");
+            p1 = p1.replace("R$", "");
+            p1 = p1.replace("R", "");
+            p1 = p1.replace(".","");
+            p1 = p1.replace(",",".");
+            double precoPneuNovoBandag = Double.parseDouble(p1);
+            ValorPneuNovoBandag.setText(dinheiro.format(precoPneuNovoBandag));
 
+            //campo pneu recapado Bandag
+            p2 = p2.replace("R$ ","");
+            p2 = p2.replace("R$", "");
+            p2 = p2.replace("R", "");
+            p2 = p2.replace(".","");
+            p2 = p2.replace(",",".");
+            double precoPneuRecapadoBandag = Double.parseDouble(p2);
+            ValorPneuRecapadoBandag.setText(dinheiro.format(precoPneuRecapadoBandag));
 
+            //campo km novo bandag
+            k1 = k1.replace(".","");
+            double kmPneuNovoBandag = Double.parseDouble(k1);
+            String k1formatado = kmcomPonto.format(kmPneuNovoBandag);
+            KmPneuNovoBandag.setText(k1formatado.replace(",","."));
+
+            // campo km recapado Bandag
+            k2 = k2.replace(".","");
+            double kmPneuRecapadoBandag = Double.parseDouble(k2);
+            String k2formatado = kmcomPonto.format(kmPneuRecapadoBandag);
+            KmPneuRecapadoBandag.setText(k2formatado.replace(",","."));
+
+            // inicia os calculos
             double kmTotalBandag = kmPneuNovoBandag + kmPneuRecapadoBandag;
             double precoTotalBandag = precoPneuNovoBandag + precoPneuRecapadoBandag;
             double cpkBandag = precoTotalBandag / kmTotalBandag  ;
