@@ -263,6 +263,7 @@ public class MainActivity extends AppCompatActivity {
 
                 textViewQuantidadeVeiculosDisplay.setText(""+progress);
                 String kmrodado = KmRodadoMes.getText().toString();
+
                 Boolean validaCamposComparacao =  validaCamposComparacao(kmrodado);
 
                 if(validaCamposComparacao){
